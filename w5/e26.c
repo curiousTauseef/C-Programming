@@ -11,7 +11,10 @@ same and print these characters as well as their indexes in the array. */
 int main(void)
 {
     char input1[MAX], input2[MAX];
-    int i;
+    int i, j;
+    FILE* fp;
+    fp = fopen("inputfrome26.txt","w+");
+
     printf("Input a string: ");
     fgets(input1, MAX, stdin);
     printf("String is: %d characters long\n", strlen(input1)-1);
@@ -29,11 +32,18 @@ int main(void)
 
     for (i=0; i<strlen(input1)-1 ; i++)
     {
-        if (input1[i] == input2[i])
+        for (j=0; j <strlen(input1)-1 ; j++)
         {
-            printf("At the string array index %d, the character %c was entered to both the string.\n", i, input1[i]);
+            if (input1[i] == input2[j])
+            {
+                printf("The character %c was in both the string.(Index %d in the 1st one, Index %d in the second one\n", input1[i], i, j);
+            }
         }
     }
+
+    fputs(input1,fp);
+    fputs(input2,fp);
+    fclose(fp);
 
     return 0;
 }

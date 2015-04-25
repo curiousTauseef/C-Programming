@@ -54,6 +54,7 @@ void app(char *s1, char *s2, int length)
     while (s2[i] != '\0') // APPENDING the second string in the result
     {
         result[i + strlen(s1) - 1] = s2[i]; // -1 because of new line character
+        result[i + strlen(s1)] = '\0';
         i++;
     }
 
