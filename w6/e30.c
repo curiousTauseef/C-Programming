@@ -12,10 +12,11 @@ struct phonenumber
 {
     char name[50];
     char number[50]; // Not using int type because it drops the first 0 in a phone number
-} contacts[numPerson];
+}; // contacts[numPerson];
 
 int main()
 {
+    struct phonenumber contacts[numPerson];
     char c;
     int i, j;
 

@@ -37,11 +37,25 @@ int main()
         contacts[i].number[j] = '\0'; // insert null at the end of the string
     }
 
+    while (args_assigned != 1)
+    {
+        do
+        {
+            puts ("Select an index number(1~5). \nProgram will print out the person with the index number: ");
+            char my_string[50];
+            gets(my_string);
+            args_assigned = sscanf (my_string, "%d", &i);
+            if (args_assigned != 1)
+            puts ("\nInput invalid!\n");
+        } while((i > 5) || (i < 1)); //keep ask until user gives an index from 1 to 5
+    }
+    /*
     do
     {
         printf("select an index number(1~5). \nProgram will print out the person with the index number: ");
         scanf("%d", &i);
     } while((i > 5) || (i < 1)); //keep ask until user gives an index from 1 to 5
+    */
 
     printf("\nPerson #%d\n", i);
     printf("Name: %s \nPhonenumber: %s\n", contacts[i-1].name, contacts[i-1].number);
