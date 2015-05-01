@@ -16,7 +16,7 @@ struct phonenumber
 int main()
 {
     char c;
-    int i, j;
+    int i, j, args_assigned;
 
     for (i=0; i<numPerson; i++)
     {

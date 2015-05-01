@@ -16,7 +16,6 @@ int main(void)
 {
     char input[MAX], choice, flush;
     FILE *fp;
-    int i;
     printf("Input a string: ");
     fgets(input, MAX, stdin);
     printMenu();
